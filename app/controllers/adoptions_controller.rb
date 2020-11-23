@@ -1,5 +1,5 @@
 class AdoptionsController < ApplicationController
-  before_action :set_adoption, only: [:show, :edit, :update, :destroy]
+  before_action :set_adoption, only: %i[show edit update destroy]
 
   # GET /adoptions
   # GET /adoptions.json

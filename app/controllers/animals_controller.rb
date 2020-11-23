@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_animal, only: %i[show edit update destroy]
 
   def index
@@ -15,8 +16,6 @@ class AnimalsController < ApplicationController
   def edit
   end
 
- 
-  # POST /animals.json
   def create
     @animal = Animal.new(animal_params)
 
