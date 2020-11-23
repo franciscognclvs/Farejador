@@ -10,6 +10,7 @@ class CreateAnimals < ActiveRecord::Migration[6.0]
       t.string :health_vaccinated
       t.string :health_dewormed
       t.string :health_special
+      t.references :user
       t.timestamps
     end
   end
