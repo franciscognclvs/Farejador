@@ -1,0 +1,14 @@
+<div class="container">
+	<%= simple_form_for @animal do |f| %>
+		<%= f.input :name %>
+		<%= f.input :specie, collection: Animal::SPECIES %>
+		<%= f.input :size, collection: Animal::SIZE %>
+		<%= f.input :location %>
+		<%= f.input :sex, collection: Animal::SEX %>
+		<%= f.input :health_castrated, collection: Animal::YESNO %>
+		<%= f.input :health_vaccinated, collection: Animal::YESNO %>
+		<%= f.input :health_dewormed, collection: Animal::YESNO %>
+		<%= f.input :health_special, collection: Animal::YESNO %>
+		<%= f.submit %>
+	<% end %>
+</div>

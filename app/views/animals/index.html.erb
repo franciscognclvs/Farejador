@@ -1,12 +1,10 @@
-<h1>animais</h1>
+<h1>Animais</h1>
 <ul>
 	<% @animals.each do |animal| %>
-		<li> 
-			<%= animal.name %> | 
-			<%= animal.location %> | 
-			<%= animal.sex %>
-      <%= animal.size %>
-		 </li>
+		<li> <%= animal.name %> </li>
+		<li><%= animal.location %> </li>
+		<li><%= animal.sex %> </li>
+  		<li><%= animal.size %> </li>
 	<% end %>
 </ul>
 
