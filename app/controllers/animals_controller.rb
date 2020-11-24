@@ -18,7 +18,7 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-
+    @animal.owner = current_user
     respond_to do |format|
       if @animal.save
         format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
@@ -61,7 +61,7 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:type,
+    params.require(:animal).permit(:specie,
      								               :size,
      								               :location,
      								               :name,
