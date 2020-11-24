@@ -5,7 +5,7 @@ class Animal < ApplicationRecord
   SIZE = %w(Pequeno Medio Grande)
   validates :size, inclusion: { in: SIZE }
   SEX = %w(Macho Fêmea)
-  validates :sex, inclusion: { in: SEX } 
+  validates :sex, inclusion: { in: SEX }
   YESNO = %w(Sim Não)
   validates :health_castrated, inclusion: { in: YESNO }
   validates :health_vaccinated, inclusion: { in: YESNO }
