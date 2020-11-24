@@ -20,7 +20,7 @@
           <%= link_to "My Page", user_session_path, class: "dropdown-item" %>
           <%= link_to "My Pets", animals_path, class: "dropdown-item" %>
           <%= link_to "New Pet", new_animal_path, class: "dropdown-item" %>
-          <%= link_to "Logout", destroy_user_session_path, class: "dropdown-item" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
         </div>
       </li>
