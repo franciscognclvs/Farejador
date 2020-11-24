@@ -9,4 +9,5 @@
 <p>Dewormed?: <%= @animal.health_dewormed %></p>
 <p>Special?: <%= @animal.health_special %></p>
 
-<%= link_to "deletar", animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "delete", animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "edit", edit_animal_path(@animal) %>
