@@ -1,13 +1,20 @@
 <%= link_to "Back", animals_path %>
-<h1> <%= @animal.name %> </h1>
-<p>Espécie: <%= @animal.specie %></p>
-<p>Porte: <%= @animal.size %></p>
-<p>Localização: <%= @animal.location %></p>
-<p>Sexo: <%= @animal.sex %></p>
-<p>Castrado? <%= @animal.health_castrated %></p>
-<p>Vacinado? <%= @animal.health_vaccinated %></p>
-<p>Vermifugado? <%= @animal.health_dewormed %></p>
-<p>Necessecita de cuidados especiais? <%= @animal.health_special %></p>
 
-<%= link_to "delete", animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to "edit", edit_animal_path(@animal) %>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1> <%= @animal.name %> </h1>
+      <p>Espécie: <%= @animal.specie %></p>
+      <p>Porte: <%= @animal.size %></p>
+      <p>Localização: <%= @animal.location.capitalize %></p>
+      <p>Sexo: <%= @animal.sex %></p>
+      <p>Castrado? <%= @animal.health_castrated %></p>
+      <p>Vacinado? <%= @animal.health_vaccinated %></p>
+      <p>Vermifugado? <%= @animal.health_dewormed %></p>
+      <p>Necessecita de cuidados especiais? <%= @animal.health_special %></p>
+      <%= link_to "edit", edit_animal_path(@animal) %>
+      <%= link_to "delete", animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+  </div>
+</div>
