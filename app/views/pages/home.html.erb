@@ -2,35 +2,49 @@
   <%= image_tag("logo_g.jpg") %>
     <div class="container">
       <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1>
-      <%= check_box_tag(:specie) %>
-      <%= label_tag(:specie, "Gato") %>
-      <%= check_box_tag(:specie) %>
-      <%= label_tag(:specie, "Cachorro") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Pequeno") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Medio") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Grande") %>
-      <%= check_box_tag(:sex) %>
-      <%= label_tag(:sex, "Menino") %>
-      <%= check_box_tag(:sex) %>
-      <%= label_tag(:sex, "Menina") %>
-      <%= check_box_tag(:health_castrated) %>
-      <%= label_tag(:health_castrated, "Castrado?") %>
-      <%= check_box_tag(:health_vaccinated) %>
-      <%= label_tag(:health_vaccinated, "Vacinado?") %>
-      <%= check_box_tag(:health_dewormed) %>
-      <%= label_tag(:health_dewormed, "Vermifugado?") %>
-      <%= check_box_tag(:health_special) %>
-      <%= label_tag(:health_special, "Especial?") %>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Gato") %>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Cachorro") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Pequeno") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Medio") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Grande") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menino") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menina") %>
+      <%#= check_box_tag(:health_castrated) %>
+      <%#= label_tag(:health_castrated, "Castrado?") %>
+      <%#= check_box_tag(:health_vaccinated) %>
+      <%#= label_tag(:health_vaccinated, "Vacinado?") %>
+      <%#= check_box_tag(:health_dewormed) %>
+      <%#= label_tag(:health_dewormed, "Vermifugado?") %>
+      <%#= check_box_tag(:health_special) %>
+      <%#= label_tag(:health_special, "Especial?") %>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Você procura:") %>
+      <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
+      <%= submit_tag("Miau!") %>
+    <% end %>
     </div>
   </div>
   <div class="animal_board">
-    aqui entram os doguinhos
+    <div class="cards-container">
+  <div class="cards">
+    <% @animals.each do |animal| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/ngqyo2AYYnE/640x426)">
+        <%= link_to animal.name.capitalize, animal_path(animal) %>
+      </div>
+    <% end %>
+  </div>
+</div>
   </div>
   <div class="container">
-    <h1 class="text-center" style="margin-top: 76px;">Por que adotar?</h1>
+    <h1 class="text-warning font-weight-bold" align="center" style="margin-top: 76px;">Por que adotar?</h1>
     <div class="row why-adopt">
       <div class="col-md-4 clearfix">
         <%= image_tag "animals (1).jpeg", class: "img_home" %>
