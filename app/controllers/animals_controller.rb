@@ -1,9 +1,9 @@
 class AnimalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_animal, only: %i[show edit update destroy]
 
   def index
-    @animals = Animal.all
+    @animals = Animal.where(owner: current_user)
   end
 
   def show

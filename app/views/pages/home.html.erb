@@ -1,34 +1,65 @@
 <div class="banner">
   <%= image_tag("logo_g.jpg") %>
     <div class="container">
-      <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong><strong></strong></h1>
-      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
-    </div>
-  <% end %>
+      <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Gato") %>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Cachorro") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Pequeno") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Medio") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Grande") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menino") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menina") %>
+      <%#= check_box_tag(:health_castrated) %>
+      <%#= label_tag(:health_castrated, "Castrado?") %>
+      <%#= check_box_tag(:health_vaccinated) %>
+      <%#= label_tag(:health_vaccinated, "Vacinado?") %>
+      <%#= check_box_tag(:health_dewormed) %>
+      <%#= label_tag(:health_dewormed, "Vermifugado?") %>
+      <%#= check_box_tag(:health_special) %>
+      <%#= label_tag(:health_special, "Especial?") %>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Você procura:") %>
+      <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
+      <%= submit_tag("Miau!") %>
+    <% end %>
     </div>
   </div>
+  <div class="animal_board">
+    <div class="cards-container">
+  <div class="cards">
+    <% @animals.each do |animal| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/ngqyo2AYYnE/640x426)">
+        <%= link_to animal.name.capitalize, animal_path(animal) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+  </div>
   <div class="container">
-    <h1 class="text-center" style="margin-top: 76px;">Por que adotar?</h1>
+    <h1 class="text-warning font-weight-bold" align="center" style="margin-top: 76px;">Por que adotar?</h1>
     <div class="row why-adopt">
       <div class="col-md-4 clearfix">
-        <%= image_tag("animals (1).jpeg") %>
-        <p><span class="purple">Ao adotar, você ajuda a reduzir o número de cães e gatos abandonados.</span>
+        <%= image_tag "animals (1).jpeg", class: "img_home" %>
+        <p align="justify"><span>Ao adotar, você ajuda a reduzir o número de cães e gatos abandonados.</span>
         Os animais de rua já passaram por muito sofrimento e tudo o que precisam é
         de um lar para serem felizes de verdade!</p>
       </div>
       <div class="col-md-4 clearfix">
-         <%= image_tag("animals (2).jpeg") %>
-        <p><span class="purple">E não há recompensa maior</span> do que vê-los se transformarem naquela coisinha
+         <%= image_tag "animals (2).jpeg", class: "img_home" %>
+        <p align="justify"><span>E não há recompensa maior</span> do que vê-los se transformarem naquela coisinha
         alegre e saudável depois de receberem uma boa dose de cuidado e carinho.</p>
       </div>
       <div class="col-md-4 clearfix">
-         <%= image_tag("animals (3).jpeg") %>
-        <p><span class="purple">Pensando bem, a pergunta é outra:</span> se você pode mudar o destino de um animal carente,
+         <%= image_tag "animals (3).jpeg", class: "img_home" %>
+        <p align="justify"><span>Pensando bem, a pergunta é outra:</span> se você pode mudar o destino de um animal carente,
         por que você não faria isso?</p>
       </div>
     </div>
