@@ -2,28 +2,34 @@
   <%= image_tag("logo_g.jpg") %>
     <div class="container">
       <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1>
-      <%= check_box_tag(:specie) %>
-      <%= label_tag(:specie, "Gato") %>
-      <%= check_box_tag(:specie) %>
-      <%= label_tag(:specie, "Cachorro") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Pequeno") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Medio") %>
-      <%= check_box_tag(:size) %>
-      <%= label_tag(:size, "Grande") %>
-      <%= check_box_tag(:sex) %>
-      <%= label_tag(:sex, "Menino") %>
-      <%= check_box_tag(:sex) %>
-      <%= label_tag(:sex, "Menina") %>
-      <%= check_box_tag(:health_castrated) %>
-      <%= label_tag(:health_castrated, "Castrado?") %>
-      <%= check_box_tag(:health_vaccinated) %>
-      <%= label_tag(:health_vaccinated, "Vacinado?") %>
-      <%= check_box_tag(:health_dewormed) %>
-      <%= label_tag(:health_dewormed, "Vermifugado?") %>
-      <%= check_box_tag(:health_special) %>
-      <%= label_tag(:health_special, "Especial?") %>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Gato") %>
+      <%#= check_box_tag(:specie) %>
+      <%#= label_tag(:specie, "Cachorro") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Pequeno") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Medio") %>
+      <%#= check_box_tag(:size) %>
+      <%#= label_tag(:size, "Grande") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menino") %>
+      <%#= check_box_tag(:sex) %>
+      <%#= label_tag(:sex, "Menina") %>
+      <%#= check_box_tag(:health_castrated) %>
+      <%#= label_tag(:health_castrated, "Castrado?") %>
+      <%#= check_box_tag(:health_vaccinated) %>
+      <%#= label_tag(:health_vaccinated, "Vacinado?") %>
+      <%#= check_box_tag(:health_dewormed) %>
+      <%#= label_tag(:health_dewormed, "Vermifugado?") %>
+      <%#= check_box_tag(:health_special) %>
+      <%#= label_tag(:health_special, "Especial?") %>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
+      <%= submit_tag("Search") %>
+    <% end %>
     </div>
   </div>
   <div class="animal_board">

@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @animals = Animal.all
   end
+
+  def search
+  	specie_params = params[:specie]
+  	@animals = Animal.all.where(specie: specie_params)
+  end
 end
