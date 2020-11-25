@@ -2,29 +2,6 @@
   <%= image_tag("logo_g.jpg") %>
     <div class="container">
       <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1>
-      <%#= check_box_tag(:specie) %>
-      <%#= label_tag(:specie, "Gato") %>
-      <%#= check_box_tag(:specie) %>
-      <%#= label_tag(:specie, "Cachorro") %>
-      <%#= check_box_tag(:size) %>
-      <%#= label_tag(:size, "Pequeno") %>
-      <%#= check_box_tag(:size) %>
-      <%#= label_tag(:size, "Medio") %>
-      <%#= check_box_tag(:size) %>
-      <%#= label_tag(:size, "Grande") %>
-      <%#= check_box_tag(:sex) %>
-      <%#= label_tag(:sex, "Menino") %>
-      <%#= check_box_tag(:sex) %>
-      <%#= label_tag(:sex, "Menina") %>
-      <%#= check_box_tag(:health_castrated) %>
-      <%#= label_tag(:health_castrated, "Castrado?") %>
-      <%#= check_box_tag(:health_vaccinated) %>
-      <%#= label_tag(:health_vaccinated, "Vacinado?") %>
-      <%#= check_box_tag(:health_dewormed) %>
-      <%#= label_tag(:health_dewormed, "Vermifugado?") %>
-      <%#= check_box_tag(:health_special) %>
-      <%#= label_tag(:health_special, "Especial?") %>
-
     <%= form_tag("/search", method: "get") do %>
       <%= label_tag(:q, "Você procura:") %>
       <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
@@ -53,12 +30,12 @@
         de um lar para serem felizes de verdade!</p>
       </div>
       <div class="col-md-4 clearfix">
-         <%= image_tag "animals (2).jpeg", class: "img_home" %>
+         <%= image_tag "animals2.jpg", class: "img_home" %>
         <p align="justify"><span>E não há recompensa maior</span> do que vê-los se transformarem naquela coisinha
         alegre e saudável depois de receberem uma boa dose de cuidado e carinho.</p>
       </div>
       <div class="col-md-4 clearfix">
-         <%= image_tag "animals (3).jpeg", class: "img_home" %>
+         <%= image_tag "animals3.jpg", class: "img_home" %>
         <p align="justify"><span>Pensando bem, a pergunta é outra:</span> se você pode mudar o destino de um animal carente,
         por que você não faria isso?</p>
       </div>
