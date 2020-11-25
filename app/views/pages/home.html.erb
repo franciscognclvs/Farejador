@@ -26,9 +26,9 @@
       <%#= label_tag(:health_special, "Especial?") %>
 
     <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Search for:") %>
+      <%= label_tag(:q, "Você procura:") %>
       <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
-      <%= submit_tag("Search") %>
+      <%= submit_tag("Miau!") %>
     <% end %>
     </div>
   </div>
