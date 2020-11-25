@@ -1,5 +1,6 @@
 <div class="container">
 	<%= simple_form_for @animal do |f| %>
+	  <%= f.input :photo, as: :file %>
 		<%= f.input :specie, label: 'Qual a espécie do animal?', collection: Animal::SPECIES %>		
 		<%= f.input :name, label: 'Qual o nome do animal?' %>
 		<%= f.input :size, label: 'Qual o porte?', collection: Animal::SIZE %>
