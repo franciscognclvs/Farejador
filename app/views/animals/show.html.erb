@@ -4,6 +4,7 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
+      <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
       <h1> <%= @animal.name %> </h1>
       <p>Espécie: <%= @animal.specie %></p>
       <p>Porte: <%= @animal.size %></p>
