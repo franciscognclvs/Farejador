@@ -59,6 +59,7 @@ class AnimalsController < ApplicationController
       							               :health_castrated,
       						              	 :health_vaccinated,
       							               :health_dewormed,
-      							               :health_special)
+                                   :health_special,
+                                   :description)
   end
 end
