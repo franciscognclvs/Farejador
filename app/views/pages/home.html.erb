@@ -27,7 +27,15 @@
     </div>
   </div>
   <div class="animal_board">
-    aqui entram os doguinhos
+    <div class="cards-container">
+  <div class="cards">
+    <% @animals.each do |animal| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/ngqyo2AYYnE/640x426)">
+        <%= link_to animal.name.capitalize, animal_path(animal) %>
+      </div>
+    <% end %>
+  </div>
+</div>
   </div>
   <div class="container">
     <h1 class="text-center" style="margin-top: 76px;">Por que adotar?</h1>
