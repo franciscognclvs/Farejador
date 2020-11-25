@@ -10,6 +10,7 @@
 		<%= f.input :health_vaccinated, label: 'Está vacinado?', collection: Animal::YESNO %>
 		<%= f.input :health_dewormed, label: 'Está vermifugado?', collection: Animal::YESNO %>
 		<%= f.input :health_special, label: 'Precisa de cuidados especiais?', collection: Animal::YESNO %>
+		<%= f.input :description, label: 'Descreva o animal' %>
 		<%= f.submit 'Publicar' %>
 	<% end %>
 </div>
