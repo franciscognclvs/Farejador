@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :search]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_animal, only: %i[show edit update destroy]
 
   def index
@@ -14,7 +14,6 @@ class AnimalsController < ApplicationController
   end
 
   def edit
-    @animals = Animal.edit(owner: current_user)
   end
 
   def create
