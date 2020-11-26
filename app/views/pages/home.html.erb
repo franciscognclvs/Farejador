@@ -5,9 +5,10 @@
     <%= form_tag("/search", method: "get") do %>
       <%= label_tag(:q, "Você procura:") %>
       <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
-      <%= submit_tag("Miau!") %>
+      <%= submit_tag "Procurar", class: 'button-search'%>
     <% end %>
     </div>
+    <%= render "shared/dog" %>
   </div>
   <div class="animal_board">
     <div class="cards-container">
@@ -28,6 +29,8 @@
     
   </div>
   <div class="container">
+    <div class="animation">   
+    </div>
     <h1 class="text-warning font-weight-bold" align="center" style="margin-top: 76px;">Por que adotar?</h1>
     <div class="row why-adopt">
       <div class="col-md-4 clearfix">
@@ -48,3 +51,5 @@
       </div>
     </div>
   </div>
+
+  
