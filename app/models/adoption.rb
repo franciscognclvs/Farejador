@@ -1,3 +1,4 @@
 class Adoption < ApplicationRecord
-  has_one :owner, through: :animal
+  belongs_to :user
+  belongs_to :animal
 end
