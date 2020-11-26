@@ -1,2 +1,3 @@
 <h1>Adoção realizada!</h1>
+<%= cl_image_tag @adoption.animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>
 <p>Parabéns, você adotou o <%= @adoption.animal.name %> do cuidador <%= @adoption.animal.owner.name %>, se você quiser mais informações entre em contato na página de contatos.</p>
