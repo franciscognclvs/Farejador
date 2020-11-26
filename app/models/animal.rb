@@ -12,4 +12,5 @@ class Animal < ApplicationRecord
   validates :health_vaccinated, inclusion: { in: YESNO }
   validates :health_dewormed, inclusion: { in: YESNO }
   validates :health_special, inclusion: { in: YESNO }
+  validates :photo, presence: true
 end
