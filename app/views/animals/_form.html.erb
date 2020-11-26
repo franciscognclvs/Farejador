@@ -3,6 +3,7 @@
 	  <%= f.input :photo, as: :file %>
 		<%= f.input :specie, label: 'Qual a espécie do animal?', collection: Animal::SPECIES %>		
 		<%= f.input :name, label: 'Qual o nome do animal?' %>
+		<%= f.input :description, label: 'Qual a idade do animal?', collection: Animal::AGE %>
 		<%= f.input :size, label: 'Qual o porte?', collection: Animal::SIZE %>
 		<%= f.input :location, label: 'Onde ele(a) está localizado?' %>
 		<%= f.input :sex, label: 'Qual o sexo do animal?', collection: Animal::SEX %>
@@ -10,7 +11,6 @@
 		<%= f.input :health_vaccinated, label: 'Está vacinado?', collection: Animal::YESNO %>
 		<%= f.input :health_dewormed, label: 'Está vermifugado?', collection: Animal::YESNO %>
 		<%= f.input :health_special, label: 'Precisa de cuidados especiais?', collection: Animal::YESNO %>
-		<%= f.input :description, label: 'Descreva o animal' %>
 		<%= f.submit 'Publicar' %>
 	<% end %>
 </div>

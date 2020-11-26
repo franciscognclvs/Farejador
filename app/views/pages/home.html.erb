@@ -5,19 +5,22 @@
     <%= form_tag("/search", method: "get") do %>
       <%= label_tag(:q, "Você procura:") %>
       <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
-      <%= submit_tag("Miau!") %>
+      <%= submit_tag "Procurar", class: 'button-search'%>
     <% end %>
     </div>
+    <%= render "shared/dog" %>
   </div>
   <div class="animal_board">
     <div class="cards-container">
   <div class="cards">
     <% @animals.each do |animal| %>
-      <% if animal.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>')">
-          <%= link_to animal.name.capitalize, animal_path(animal) %>
-        </div>
-      <% end %>
+      <% if animal.adopted == false %>
+        <% if animal.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>')">
+            <%= link_to animal.name.capitalize, animal_path(animal), class: "btn btn-secondary pet_tag" %>
+          </div>
+        <% end %>
+      <% end %>  
     <% end %>
   </div>
 </div>
@@ -26,6 +29,8 @@
     
   </div>
   <div class="container">
+    <div class="animation">   
+    </div>
     <h1 class="text-warning font-weight-bold" align="center" style="margin-top: 76px;">Por que adotar?</h1>
     <div class="row why-adopt">
       <div class="col-md-4 clearfix">
@@ -46,3 +51,5 @@
       </div>
     </div>
   </div>
+
+  

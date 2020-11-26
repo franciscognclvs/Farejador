@@ -1,8 +1,11 @@
 .animal-photo {
   position: relative;
+  border-radius: 10px;
   .animal-name{
     position: absolute;
-    color: white
+    color: white;
+    background: gray;
+    margin: 6px;
   }
 }
 
