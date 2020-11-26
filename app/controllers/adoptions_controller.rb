@@ -4,5 +4,12 @@ class AdoptionsController < ApplicationController
   end
 
   def show
+  	@adoption = Adoption.find(params[:id])
+  end
+
+  def create
+  	@animal = Animal.find(params[:animal_id])
+  	@adoption = Adoption.create(animal: @animal, user: current_user)
+  	redirect_to adoption_path(@adoption)
   end
 end

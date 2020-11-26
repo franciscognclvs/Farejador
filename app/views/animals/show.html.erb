@@ -19,7 +19,9 @@
       <% if @animal.owner == current_user %>
         <%= link_to "edit", edit_animal_path(@animal) %>
         <%= link_to "delete", animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} %>
-        <%= link_to "Quero adotar!", adoption_path(@animal) %>
+        <%= simple_form_for [@animal, @adoption] do |f| %>
+          <%= f.submit 'Quero adotar!', class: "btn btn-succes" %>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -7,6 +7,7 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    @adoption = Adoption.new
   end
 
   def new
