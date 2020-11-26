@@ -1,2 +1,6 @@
-<h1>Adoptions#show</h1>
-<p>Parabéns, você adotou o <%= @adoption.animal %> do cuidador <%= @adoption.animal.owner %>, se você quiser mais informações entre em contato na página de contatos.</p>
+<h1>Adoção realizada!</h1>
+<%= cl_image_tag @adoption.animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>
+<p>Parabéns, você adotou o <%= @adoption.animal.name %> do cuidador <%= @adoption.animal.owner.name %>, entre em contato com o cuidador pelo numero <%= @adoption.animal.owner.telefone %>.</p>
+<% if @adoption.animal.health_special == 'Sim' %>
+  <p>Lembre-se, por precisar de cuidados especiais, seu novo animal precisará do dobro de carinho</p>
+<% end %>

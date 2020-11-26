@@ -3,7 +3,7 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: %i[show edit update destroy]
 
   def index
-    @animals = Animal.where(owner: current_user)
+    @animals = Animal.where(adopted: false, owner: current_user)
   end
 
   def show
@@ -64,3 +64,4 @@ class AnimalsController < ApplicationController
                                    :description)
   end
 end
+
