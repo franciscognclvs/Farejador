@@ -5,7 +5,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-    <div class="form" align="center">
+    <div class="form">
       <div class="form-inputs">
         <%= f.input :name,
                     required: true%>
@@ -26,11 +26,12 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
     </div>
-      <div class="form-actions" align="center">
-        <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+      <div class="form-actions" align="right">
+        <%= f.button :submit, "Sign up", class: "btn btn-warning" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
+    <div class="links" align="right">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
