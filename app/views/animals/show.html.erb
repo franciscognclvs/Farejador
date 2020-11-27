@@ -27,8 +27,10 @@
                           <p class="fas fa-paw"> <i style="color:red;">Necessita de cuidados especiais?  </i><i style="color:black;"><%= @animal.health_special %></i></p>
                         </ul>
 
-                        <%= simple_form_for [@animal, @adoption] do |f| %>
-                          <%= f.submit 'Quero adotar!', class: "btn btn-success btn-lg btn-block"%>
+                        <% if @animal.owner != current_user %>
+                          <%= simple_form_for [@animal, @adoption] do |f| %>
+                            <%= f.submit 'Quero adotar!', class: "btn btn-success btn-lg btn-block"%>
+                          <% end %>
                         <% end %>
 
                       </div>
