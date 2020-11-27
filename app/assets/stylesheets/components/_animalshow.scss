@@ -1,12 +1,15 @@
 .animal-photo {
   position: relative;
-  border-radius: 10px;
+  border-radius: 25px;
   .animal-name{
     position: absolute;
     color: white;
     background: gray;
-    margin: 6px;
+    margin: 10px;
   }
+}
+img {
+  border-radius: 7px;
 }
 
 .fa-paw {
@@ -16,3 +19,31 @@
 .about {
   width: 100%;
 }
+
+.card-body {
+  border-radius: 7px;
+  background-color: rgb(214, 208, 207);
+}
+
+.clear-box {
+  background-color: rgb(231, 226, 226);
+}
+
+.btn-secondary {
+  border-bottom-right-radius: 7px;
+  vertical-align:center ;
+  height: 30px;
+}
+
+.clear {
+  background-color: rgb(218, 228, 187);
+  border-radius: 7px;
+}
+
+.card-pet-info {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
