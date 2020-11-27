@@ -1,6 +1,29 @@
-<h1>Adoção realizada!</h1>
-<%= cl_image_tag @adoption.animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>
-<p>Parabéns, você adotou o <%= @adoption.animal.name %> do cuidador <%= @adoption.animal.owner.name %>, entre em contato com o cuidador pelo numero <%= @adoption.animal.owner.telefone %>.</p>
-<% if @adoption.animal.health_special == 'Sim' %>
-  <p>Lembre-se, por precisar de cuidados especiais, seu novo animal precisará do dobro de carinho</p>
-<% end %>
+<%= link_to "voltar", animals_path, class: "btn btn-secondary m-3" %>
+<div class="container">
+  <div class="d-flex justify-content-center">
+      <div style="padding-bottom: 40px;">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 animal-photo">
+            <h1 class="animal-name"> <strong><%= @adoption.animal.name %></strong> </h1>
+            <%= cl_image_tag @adoption.animal.photo.key, height: 600, width: 700, gravity: :auto, crop: :fill, class: "animal-photo" %>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="about" align="justify">
+              <h2><strong>Parabéns! Você acaba de adotar <%= @adoption.animal.name %></strong>.</h2>
+              <br>
+              <br>
+              <p>Para completar a adoção entre em contanto com <%= @adoption.animal.owner.name %> através do número <%= @adoption.animal.owner.telefone %> e diga que você viu o anuncio atráves do Farejadores.</p>
+              <% if @adoption.animal.health_special == 'Sim' %>
+                <p>Lembre-se, por precisar de cuidados especiais, seu novo animal precisará do dobro de carinho.</p>
+              <% end %>
+              <h4>Atenção!</h4>
+              <br>
+              <p>Não permitimos a venda de animais através do site. No entanto, alguns protetores solicitam uma taxa de adoção para ajudar nos custos com resgates e cuidados necessários. Se estiver inseguro quanto à seriedade da cobrança, escreva para lataconosco@farejadores.com.br.</p>
+              <h5>Aubrigado!</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

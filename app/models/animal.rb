@@ -13,4 +13,6 @@ class Animal < ApplicationRecord
   validates :health_dewormed, inclusion: { in: YESNO }
   validates :health_special, inclusion: { in: YESNO }
   validates :photo, presence: true
+  AGE = %w(Filhote Adulto Idoso)
+  validates :description, inclusion: { in: AGE }
 end

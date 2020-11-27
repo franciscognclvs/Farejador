@@ -17,7 +17,7 @@
       <% if animal.adopted == false %>
         <% if animal.photo.attached? %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>')">
-            <%= link_to animal.name.capitalize, animal_path(animal), class: "btn btn-secondary" %>
+            <%= link_to animal.name.capitalize, animal_path(animal), class: "btn btn-secondary pet_tag" %>
           </div>
         <% end %>
       <% end %>  
