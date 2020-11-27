@@ -1,11 +1,11 @@
 <div class="banner">
   <%= image_tag("logo_g.jpg") %>
     <div class="container">
-      <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1>
+      <h1>Eles estão esperando um novo lar <strong>&hearts;&hearts;&hearts;</strong></h1><br>
     <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Você procura:") %>
-      <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro") %>
-      <%= submit_tag "Procurar", class: 'button-search'%>
+      <%= label_tag(:q, "O seu novo amigo será um:", class: 'edit-label') %>
+      <%= select_tag "specie", options_for_select([ "Gato", "Cachorro" ], "Cachorro"), class: 'specie-tag' %>
+      <%= submit_tag "Procurar", class:'button-search'%>
     <% end %>
     </div>
     <%= render "shared/dog" %>
