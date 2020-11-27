@@ -58,7 +58,7 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:22px;
+	font-size:20px;
 	font-weight:bold;
 	padding:7px 25px;
 	text-decoration:none;
@@ -71,4 +71,17 @@
 .button-search:active {
 	position:relative;
 	top:1px;
+}
+
+.form-edit  {
+	border-radius: 5px;
+}
+.specie-tag {
+	background-color: #fdbd5a;
+	border-radius: 8px;
+}
+
+.edit-label {
+	 color: #605649;
+	 font-style: italic;
 }

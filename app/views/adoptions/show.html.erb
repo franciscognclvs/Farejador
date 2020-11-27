@@ -1,15 +1,78 @@
+<%= link_to "voltar", animals_path, class: "btn btn-secondary m-3" %>
 <div class="container">
-  <div class="showadoptions">
-    <h1>Adoção realizada!</h1>
-    <%= cl_image_tag @adoption.animal.photo.key, height: 300, width: 400, gravity: :auto, crop: :fill %>
-    <br>
-    <br>    
-    <p><strong>Parabéns</strong></p>
-    <br>
-    <br>
-    <p>você adotou o <%= @adoption.animal.name %> do cuidador <%= @adoption.animal.owner.name %>, entre em contato pelo numero <%= @adoption.animal.owner.telefone %>.</p>
-    <% if @adoption.animal.health_special == 'Sim' %>
-      <p>Lembre-se, por precisar de cuidados especiais, seu novo animal precisará do dobro de carinho</p>
-    <% end %>
-  </div>
+  <div class="d-flex justify-content-center">
+      <div style="padding-bottom: 40px;">
+        <div class="clear">
+          <h1 class="animal-name"> <strong><%= @animal.name %></strong> </h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 animal-photo">
+              <%= cl_image_tag @animal.photo.key, height: 600, width: 700, gravity: :auto, crop: :fill %>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <div class="organizer">
+                    <div class="card-body">
+                      
+                      <div class="clear-box" style="padding: 20px; margin-bottom: 20px;">
+                        <p><strong>DADOS GERAIS</strong></p>
+                        <ul class="pet-check">
+                          <p class="fas fa-paw"> <i style="color:red;">Espécie:  </i><i style="color:black;"><%= @animal.specie %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Porte:  </i><i style="color:black;"><%= @animal.size %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Localização: </i><i style="color:black;"><%= @animal.location.capitalize %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Sexo:  </i><i style="color:black;"><%= @animal.sex %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Castrado?  </i><i style="color:black;"><%= @animal.health_castrated %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Vacinado?  </i><i style="color:black;"><%= @animal.health_vaccinated %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Vermifugado?  </i><i style="color:black;"><%= @animal.health_dewormed %></i></p>
+                          <p class="fas fa-paw"> <i style="color:red;">Necessita de cuidados especiais?  </i><i style="color:black;"><%= @animal.health_special %></i></p>
+                        </ul>
+
+                        <%= simple_form_for [@animal, @adoption] do |f| %>
+                          <%= f.submit 'Quero adotar!', class: "btn btn-success btn-lg btn-block"%>
+                        <% end %>
+
+                      </div>
+                      
+                      <% if @animal.owner == current_user %>
+                        <div class="row d-flex justify-content-around">
+                          <%= link_to edit_animal_path(@animal) do  %>
+                          <i class="fas fa-edit"></i>
+                          <% end %>
+                          <%= link_to animal_path(@animal), method: :delete, data: {confirm: "Are you sure?"} do %>
+                          <i class="far fa-trash-alt"> </i>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="card-pet-info">
+          <div class="col-md-10">
+            <div class="about" align="justify">
+              <h3><strong>A história de <%= @animal.name %></strong></h3>
+              <br>
+              <br>
+              
+              <p>Olá,</p>
+
+              <p>Meu nome é <%= @animal.name %>, sou um <%= @animal.specie %> de porte <%= @animal.size %>, que adora um carinho, gosto de brincar com outros <%= @animal.specie.pluralize %>, sou tranquilo e companheiro. falam que sou muito bonzinho e não entendem como puderam me abandonar, depois de perder meu lar, tive que passar um tempo nas ruas.</p>
+              <p>Tudo o que quero é encontrar uma família que me queira e que me ame assim como eu irei amá-la! Apesar de toda a dor que passei, o que mais tenho dentro de mim é amor e carinho, que espero poder te dar!</p>
+              <p>Se quiser ser meu dono, clique no Botão Quero adotar.</p>
+              <p>Moro em <%= @animal.location.capitalize %>.</p>
+              <p>Do seu futuro melhor amigo, 
+                <br><%= @animal.name %>.
+              </p>
+
+              <p><strong>Descrição do Usuário: </strong><%= @animal.description %></p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>   
 </div>
+
